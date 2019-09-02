@@ -68,6 +68,8 @@ Default port is **8080**.
 
 After launching a server, you should go to `http://localhost:<port>`
 
+Every time you change a file in `src` dev server automatically compiles and updates the page.
+
 ### `gwa build`
 
 Compiles go code to WebAssembly. Compiled `out.wasm` file could be found in `build` folder.
