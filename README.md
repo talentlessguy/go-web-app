@@ -62,7 +62,7 @@ Initialize a project in a picked directory.
 
 ### `gwa dev --port <port>`
 
-Launches a development server with specified port.
+Builds the project on first run and launches a development server with specified port.
 
 Default port is **8080**.
 
