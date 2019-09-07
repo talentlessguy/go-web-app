@@ -20,7 +20,8 @@ func RunDevServer(c *cli.Context) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	
+
+	CreateIndexHTML(port)
 	CompileToWASM()
 
 	fmt.Println(
