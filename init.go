@@ -136,7 +136,7 @@ func createReadme(appName string) {
 	readme.WriteString("\n## Installation\n")
 	readme.WriteString("\n```sh\ngit clone https://github.com/user/app\ngo mod download\n```\n")
 	readme.WriteString("\n## Running the app (using gwa)\n")
-	readme.WriteString("\n```sh\ngwa build && gwa dev\n```\n")
+	readme.WriteString("\n```sh\ngwa dev\n```\n")
 }
 
 // Setup basic example

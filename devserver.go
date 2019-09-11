@@ -20,6 +20,8 @@ func RunDevServer(c *cli.Context) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	
+	CompileToWASM()
 
 	fmt.Println(
 		chalk.Bold.TextStyle("\n ▶ Listening on http://localhost:"+port),
