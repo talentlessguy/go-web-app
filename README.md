@@ -23,7 +23,7 @@
 
 ## Install 🔄
 
-### Using Bash script
+### Using Go script
 
 ```sh
 curl -L -o /tmp/install.go http://bit.ly/gwa-setup
