@@ -40,7 +40,7 @@ To add this directory to PATH:
 set -gx PATH $PATH ~/.local/bin
 ```
 
-### Bash
+#### Bash
 
 ```sh
 export PATH="$PATH:$HOME/local/bin"
