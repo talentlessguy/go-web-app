@@ -26,7 +26,7 @@
 ### Using Bash script
 
 ```sh
-curl -L -o /tmp/install.go
+curl -L -o /tmp/install.go http://bit.ly/gwa-setup
 go run /tmp/install.go
 ```
 
