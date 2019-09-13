@@ -158,7 +158,7 @@ func helloWorld() {
 
 	defer mainGo.Close()
 
-	mainGo.WriteString(`//+build wasm
+	mainGo.WriteString(`//+build js
 
 package main
 

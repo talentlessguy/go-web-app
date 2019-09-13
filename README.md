@@ -8,28 +8,43 @@
 
 ## What's included 📦
 
-* Dev Server
-* [TinyGo](https://tinygo.org) for small WebAssembly output
-* Git setup
-* README file
-* Glue files (`index.html` + `wasm_exec.js`)
-* Auto-reload
+- Dev Server
+- [TinyGo](https://tinygo.org) for small WebAssembly output
+- Git setup
+- README file
+- Glue files (`index.html` + `wasm_exec.js`)
+- Auto-reload
 
 ## Requirements ✅
 
-* Go 1.12+ (I have Go 1.12.4)
-* TinyGo installed. Setup [here](https://tinygo.org/getting-started)
-* Browser that supports WebAssembly
+- Go 1.12+ (I have Go 1.12.4)
+- TinyGo installed. Setup [here](https://tinygo.org/getting-started)
+- Browser that supports WebAssembly
 
 ## Install 🔄
 
 ### Using Bash script
 
 ```sh
-curl -L https://bit.ly/gwa-install | sudo bash
+curl -L -o /tmp/install.go
+go run /tmp/install.go
 ```
 
-This will install `gwa` into `/usr/local/bin` so be sure that `/usr/local/bin` is in your `$PATH`.
+This will install `gwa` into `~/.local/bin` so be sure that `~/.local/bin` is in your `$PATH`.
+
+To add this directory to PATH:
+
+#### Fish
+
+```sh
+set -gx PATH $PATH ~/.local/bin
+```
+
+### Bash
+
+```sh
+export PATH="$PATH:$HOME/local/bin"
+```
 
 ### With `go get`
 
