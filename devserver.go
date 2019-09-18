@@ -18,9 +18,9 @@ func RunDevServer(c *cli.Context) {
 	defer watcher.Close()
 
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("Failed to start file watcher, %v", err)
 	}
-	
+
 	CompileToWASM()
 
 	fmt.Println(

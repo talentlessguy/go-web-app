@@ -20,13 +20,13 @@ func CompileToWASM() {
 	err := cmd.Run()
 
 	if err != nil {
-		log.Fatal("Failed compile to WebAssembly")
+		log.Fatalf("Failed compile to WebAssembly, %v", err)
 	}
 
 	file, err := os.Open("build/out.wasm")
 
 	if err != nil {
-		log.Fatal("Failed to open WebAssembly output (.wasm)")
+		log.Fatalf("Failed to open WebAssembly, %v", err)
 	}
 
 	defer file.Close()
@@ -34,7 +34,7 @@ func CompileToWASM() {
 	stat, err := file.Stat()
 
 	if err != nil {
-		log.Fatal("Failed to load stats for WebAssembly output")
+		log.Fatalf("Failed to load stats for WebAssembly output, %v", err)
 	}
 
 	fmt.Print(

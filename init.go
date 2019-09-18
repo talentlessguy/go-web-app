@@ -153,7 +153,7 @@ func helloWorld() {
 	fmt.Println(chalk.Cyan.Color("Setting up Hello World..."))
 
 	if err != nil {
-		log.Fatal("Failed to create main.go")
+		log.Fatalf("Failed to create main.go, %v", err)
 	}
 
 	defer mainGo.Close()
