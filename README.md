@@ -92,3 +92,7 @@ Compiles go code to WebAssembly. Compiled `out.wasm` file could be found in `bui
 Everything in `src` compiles to `build`, every go file.
 
 After build, binary size is shown
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/talentlessguy/go-web-app.svg)](https://starchart.cc/talentlessguy/go-web-app)
