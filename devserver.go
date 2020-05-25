@@ -15,13 +15,15 @@ func RunDevServer(c *cli.Context) {
 	port := c.String("port")
 	watcher, err := fs.NewWatcher()
 
+	mode := c.String("mode")
+
 	defer watcher.Close()
 
 	if err != nil {
 		log.Fatalf("Failed to start file watcher, %v", err)
 	}
 
-	CompileToWASM()
+	CompileToWASM(mode)
 
 	fmt.Println(
 		chalk.Bold.TextStyle("\n ▶ Listening on http://localhost:"+port),
@@ -43,7 +45,7 @@ func RunDevServer(c *cli.Context) {
 				if event.Op&fs.Write == fs.Write {
 					log.Println("modified file:", event.Name)
 					log.Println("Reloading browser.")
-					CompileToWASM()
+					CompileToWASM(mode)
 					rl.SendReload()
 				}
 			case err, ok := <-watcher.Errors:

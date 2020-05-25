@@ -27,6 +27,13 @@ func commands() {
 			Name:   "build",
 			Usage:  "Compile Go to WebAssembly",
 			Action: CompileToWASMCLI,
+			Flags: []cli.Flag{
+				cli.StringFlag{
+					Name:  "mode",
+					Value: "tinygo",
+					Usage: "Go compiler to use",
+				},
+			},
 		},
 		{
 			Name:   "dev",

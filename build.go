@@ -2,31 +2,38 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"os/exec"
 
 	"github.com/ttacon/chalk"
 	"github.com/urfave/cli"
+	"github.com/ztrue/tracerr"
 )
 
 // CompileToWASM - compile go code to wasm with tinygo
-func CompileToWASM() {
+func CompileToWASM(mode string) {
 
-	cmd := exec.Command("tinygo", "build", "-o", "build/out.wasm", "./src")
+	cmd := exec.Command("tinygo", "build", "-o", "build/out.wasm", "-target", "wasm", "./src")
+
+	if mode == "go" {
+		cmd = exec.Command("go", "build", "-o", "build/out.wasm", "./src/*.go")
+		cmd.Env = append(cmd.Env, "GOOS=js", "GOARCH=wasm")
+	}
 
 	fmt.Println(chalk.Magenta.Color("\nCompiling to WebAssembly...⌛"))
+
+	fmt.Println(">", cmd.Env, cmd.Args)
 
 	err := cmd.Run()
 
 	if err != nil {
-		log.Fatalf("Failed compile to WebAssembly, %v", err)
+		tracerr.PrintSourceColor(err)
 	}
 
 	file, err := os.Open("build/out.wasm")
 
 	if err != nil {
-		log.Fatalf("Failed to open WebAssembly, %v", err)
+		tracerr.PrintSourceColor(err)
 	}
 
 	defer file.Close()
@@ -34,7 +41,7 @@ func CompileToWASM() {
 	stat, err := file.Stat()
 
 	if err != nil {
-		log.Fatalf("Failed to load stats for WebAssembly output, %v", err)
+		tracerr.PrintSourceColor(err)
 	}
 
 	fmt.Print(
@@ -47,5 +54,5 @@ func CompileToWASM() {
 
 // CompileToWASMCLI - the same as CompileToWASM but for CLI
 func CompileToWASMCLI(c *cli.Context) {
-	CompileToWASM()
+	CompileToWASM(c.String("mode"))
 }
