@@ -1,4 +1,4 @@
-![go-web-app cover](https://i.ibb.co/BtnWgP6/create-go-web-app.jpg)
+![go-web-app cover](go-web-app.jpg)
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/talentlessguy/create-go-web-app.svg?style=flat-square)
 [![Go Report Card](https://goreportcard.com/badge/github.com/talentlessguy/create-go-web-app)](https://goreportcard.com/report/github.com/talentlessguy/create-go-web-app)
