@@ -1,4 +1,4 @@
-module create-go-web-app
+module github.com/talentlessguy/go-web-app
 
 go 1.12
 
