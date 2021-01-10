@@ -2,7 +2,7 @@
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/talentlessguy/create-go-web-app.svg?style=flat-square)
 [![Go Report Card](https://goreportcard.com/badge/github.com/talentlessguy/create-go-web-app)](https://goreportcard.com/report/github.com/talentlessguy/create-go-web-app)
-[![Codacy grade](https://img.shields.io/codacy/grade/c3198e0739ec48bba8902b83a02c3a55.svg?style=flat-square)](https://app.codacy.com/app/komfy/go-web-app)
+[![Codacy grade](https://img.shields.io/codacy/grade/36ef9ede8a13452f8498dcdbee6177eb.svg?style=flat-square)](https://app.codacy.com/app/komfy/go-web-app)
 
 **Simple CLI for setting up Go WebAssembly frontend app.**
 
@@ -92,7 +92,3 @@ Compiles go code to WebAssembly. Compiled `out.wasm` file could be found in `bui
 Everything in `src` compiles to `build`, every go file.
 
 After build, binary size is shown
-
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/talentlessguy/go-web-app.svg)](https://starchart.cc/talentlessguy/go-web-app)
