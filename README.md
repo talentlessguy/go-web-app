@@ -6,45 +6,20 @@
 
 **Simple CLI for setting up Go WebAssembly frontend app.**
 
-## What's included 📦
+## What's included
 
 - 🛠️ Dev Server with live reload
 - 🗜️ [TinyGo](https://tinygo.org) for small WebAssembly output
 - ➡ Git setup with files (such as `README.md`)
 - 🩹 Glue files (`index.html` + `wasm_exec.js`)
 
-## Requirements ✅
+## Requirements
 
 - Go 1.12+
 - Browser that supports WebAssembly
 - `lld` (LLVM linker)
 
-## Install 🔄
-
-### Using Go script
-
-```sh
-curl -L -o /tmp/install.go http://bit.ly/gwa-setup
-go run /tmp/install.go
-```
-
-This will install `gwa` into `~/.local/bin` so be sure that `~/.local/bin` is in your `$PATH`.
-
-To add this directory to PATH:
-
-#### Fish
-
-```sh
-set -gx PATH $PATH ~/.local/bin
-```
-
-#### Bash
-
-```sh
-export PATH="$PATH:$HOME/local/bin"
-```
-
-### With `go get`
+## Install
 
 ```sh
 go get github.com/talentlessguy/go-web-app
@@ -52,7 +27,7 @@ go get github.com/talentlessguy/go-web-app
 
 Then use as `go-web-app` command instead of `gwa`
 
-## Commands 💻
+## CLI Reference
 
 ### `gwa init <app name>`
 
