@@ -8,18 +8,16 @@
 
 ## What's included 📦
 
-- Dev Server
-- [TinyGo](https://tinygo.org) for small WebAssembly output, otherwise fallback to `go`
-- Git setup
-- README file
-- Glue files (`index.html` + `wasm_exec.js`)
-- Auto-reload
+- 🛠️ Dev Server with live reload
+- 🗜️ [TinyGo](https://tinygo.org) for small WebAssembly output
+- ➡ Git setup with files (such as `README.md`)
+- 🩹 Glue files (`index.html` + `wasm_exec.js`)
 
 ## Requirements ✅
 
 - Go 1.12+
 - Browser that supports WebAssembly
-- lld (LLVM linker)
+- `lld` (LLVM linker)
 
 ## Install 🔄
 
