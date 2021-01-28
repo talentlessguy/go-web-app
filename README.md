@@ -25,11 +25,11 @@
 go get github.com/talentlessguy/go-web-app
 ```
 
-Then use as `go-web-app` command instead of `gwa`
+Then use as `go-web-app`.
 
 ## CLI Reference
 
-### `gwa init <app name>`
+### `go-web-app init <app name>`
 
 Initialize a project in a picked directory.
 
@@ -48,7 +48,7 @@ Initialize a project in a picked directory.
 └── wasm_exec.js
 ```
 
-### `gwa dev --port <port>`
+### `go-web-app dev --port <port>`
 
 Builds the project on first run and launches a development server with specified port.
 
@@ -58,7 +58,7 @@ After launching a server, you should go to `http://localhost:<port>`
 
 Every time you change a file in `src` dev server automatically compiles and updates the page.
 
-### `gwa build`
+### `go-web-app build`
 
 Compiles go code to WebAssembly. Compiled `out.wasm` file could be found in `build` folder.
 
