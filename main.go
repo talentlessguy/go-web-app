@@ -12,7 +12,7 @@ var app = cli.NewApp()
 func info() {
 	app.Name = "go-web-app"
 	app.Usage = "Simple CLI for setting up Go WebAssembly frontend app."
-	app.Authors = []*cli.Author{&cli.Author{
+	app.Authors = []cli.Author{{
 		Name:  "v1rtl",
 		Email: "pilll.PL22@gmail.com",
 	}}
@@ -31,7 +31,7 @@ func commands() {
 			Usage:  "Compile Go to WebAssembly",
 			Action: CompileToWASMCLI,
 			Flags: []cli.Flag{
-				cli.StringFlag{
+				&cli.StringFlag{
 					Name:  "mode",
 					Value: "tinygo",
 					Usage: "Go compiler to use",
@@ -43,7 +43,7 @@ func commands() {
 			Usage:  "Run a development server",
 			Action: RunDevServer,
 			Flags: []cli.Flag{
-				cli.StringFlag{
+				&cli.StringFlag{
 					Name:  "port",
 					Value: "8080",
 					Usage: "Dev Server port",
