@@ -6,12 +6,12 @@ import (
 	"os/exec"
 
 	"github.com/ttacon/chalk"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 	"github.com/ztrue/tracerr"
 )
 
 // CompileToWASM - compile go code to wasm with tinygo
-func CompileToWASM(mode string) {
+func CompileToWASM(mode string) error {
 
 	cmd := exec.Command("tinygo", "build", "-o", "build/out.wasm", "-target", "wasm", "./src")
 
@@ -50,9 +50,11 @@ func CompileToWASM(mode string) {
 		stat.Size()/1024,
 		"Kb\n\n",
 	)
+
+	return err
 }
 
 // CompileToWASMCLI - the same as CompileToWASM but for CLI
-func CompileToWASMCLI(c *cli.Context) {
-	CompileToWASM(c.String("mode"))
+func CompileToWASMCLI(c *cli.Context) error {
+	return CompileToWASM(c.String("mode"))
 }

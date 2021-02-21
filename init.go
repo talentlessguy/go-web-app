@@ -7,16 +7,18 @@ import (
 	"os/exec"
 
 	"github.com/ttacon/chalk"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 )
 
 // Create a project directory
-func createDir(dir string) {
+func createDir(dir string) error {
 	err := os.MkdirAll(dir, 0755)
 	if err != nil {
 		log.Fatal("Please give your project a name")
 	}
-	os.Chdir(dir)
+	err = os.Chdir(dir)
+
+	return err
 }
 
 func initGitRepo() {
@@ -224,26 +226,28 @@ func main() {
 }
 
 // Create directory for wasm output
-func createOutputDir() {
-	os.Chdir("..")
-	createDir("build")
+func createOutputDir() error {
+	err := os.Chdir("..")
+	err = createDir("build")
+
+	return err
 }
 
 // InitWebApp - create a project with files
-func InitWebApp(c *cli.Context) {
+func InitWebApp(c *cli.Context) error {
 
 	appName := c.Args().First()
 
 	// Create a project directory
-	createDir(appName)
+	err := createDir(appName)
 	// Go to project
-	os.Chdir(appName)
+	err = os.Chdir(appName)
 	initGitRepo()
 	goModule(appName)
 	createReadme(appName)
 	setupGlue()
 	helloWorld()
-	createOutputDir()
+	err = createOutputDir()
 
 	fmt.Println(
 		"Go Web app is ready!",
@@ -255,4 +259,6 @@ func InitWebApp(c *cli.Context) {
 		chalk.Blue.Color("gwa dev"),
 		chalk.Bold.TextStyle("\n\nHappy coding!\n"),
 	)
+
+	return err
 }

@@ -7,11 +7,11 @@ import (
 	fs "github.com/fsnotify/fsnotify"
 	rl "github.com/talentlessguy/golang-reload-browser"
 	"github.com/ttacon/chalk"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 )
 
 // RunDevServer - launches a server for hosting html page with wasm_exec and fetched wasm binaries
-func RunDevServer(c *cli.Context) {
+func RunDevServer(c *cli.Context) error {
 	port := c.String("port")
 	watcher, err := fs.NewWatcher()
 
@@ -62,4 +62,6 @@ func RunDevServer(c *cli.Context) {
 		log.Fatal(err)
 	}
 	<-done
+
+	return err
 }

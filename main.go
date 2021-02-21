@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 )
 
 var app = cli.NewApp()
@@ -12,15 +12,15 @@ var app = cli.NewApp()
 func info() {
 	app.Name = "go-web-app"
 	app.Usage = "Simple CLI for setting up Go WebAssembly frontend app."
-	app.Authors = []cli.Author{{
+	app.Authors = []*cli.Author{{
 		Name:  "v1rtl",
 		Email: "pilll.PL22@gmail.com",
 	}}
-	app.Version = "0.0.8"
+	app.Version = "0.0.9"
 }
 
 func commands() {
-	app.Commands = []cli.Command{
+	app.Commands = []*cli.Command{
 		{
 			Name:   "init",
 			Usage:  "Initialize a web app",
@@ -32,9 +32,10 @@ func commands() {
 			Action: CompileToWASMCLI,
 			Flags: []cli.Flag{
 				&cli.StringFlag{
-					Name:  "mode",
-					Value: "tinygo",
-					Usage: "Go compiler to use",
+					Name:    "mode",
+					Value:   "tinygo",
+					Usage:   "Go compiler to use",
+					Aliases: []string{"m"},
 				},
 			},
 		},
@@ -44,9 +45,10 @@ func commands() {
 			Action: RunDevServer,
 			Flags: []cli.Flag{
 				&cli.StringFlag{
-					Name:  "port",
-					Value: "8080",
-					Usage: "Dev Server port",
+					Name:    "port",
+					Value:   "8080",
+					Usage:   "Dev Server port",
+					Aliases: []string{"p"},
 				},
 			},
 		},
