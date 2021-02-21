@@ -7,7 +7,7 @@ import (
 	fs "github.com/fsnotify/fsnotify"
 	rl "github.com/talentlessguy/golang-reload-browser"
 	"github.com/ttacon/chalk"
-	"github.com/urfave/cli/v2"
+	cli "github.com/urfave/cli/v2"
 )
 
 // RunDevServer - launches a server for hosting html page with wasm_exec and fetched wasm binaries

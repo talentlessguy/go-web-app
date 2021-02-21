@@ -7,7 +7,7 @@ import (
 	"os/exec"
 
 	"github.com/ttacon/chalk"
-	"github.com/urfave/cli/v2"
+	cli "github.com/urfave/cli/v2"
 )
 
 // Create a project directory
