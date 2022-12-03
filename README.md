@@ -4,6 +4,8 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/talentlessguy/create-go-web-app)](https://goreportcard.com/report/github.com/talentlessguy/create-go-web-app)
 [![Codacy grade](https://img.shields.io/codacy/grade/36ef9ede8a13452f8498dcdbee6177eb.svg?style=flat-square)](https://app.codacy.com/app/komfy/go-web-app)
 
+> :warning: looking for maintainers (dm @v_1rtl on telegram or email to v1rtl@proton.me)
+
 **Simple CLI for setting up Go WebAssembly frontend app.**
 
 ## What's included
